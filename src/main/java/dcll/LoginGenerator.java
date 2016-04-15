@@ -40,9 +40,8 @@ public class LoginGenerator {
      * @return le login genere
      */
     public String generateLoginForNomAndPrenom(final String nom, final String prenom) {
-        int magicNumber3 = 3;
         String p = deAccent(prenom.substring(0,1).toUpperCase());
-        String n = deAccent(nom.substring(0,magicNumber3).toUpperCase());
+        String n = deAccent(nom.substring(0,3).toUpperCase());
         String login = p + n ;
         if (loginService.loginExists(login)) {
             login = login + "1" ;
@@ -62,10 +61,4 @@ public class LoginGenerator {
         Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks} + ");
         return pattern.matcher(nfdNormalizedString).replaceAll("");
     }
-
-
-
-
-
-
 }
