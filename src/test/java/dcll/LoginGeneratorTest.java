@@ -21,19 +21,32 @@ public class LoginGeneratorTest {
     }
 
     @Test
-    public void generateLoginForNomAndPrenom() throws Exception {
+    public void generateLoginForDurandPaul() throws Exception {
         String res;
-        res = loginGenerator.generateLoginForNomAndPrenom("Paul","Durand");
-
+        res = loginGenerator.generateLoginForNomAndPrenom("Durand","Paul");
         assertEquals(loginService.loginExists(res),true);
-        res = loginGenerator.generateLoginForNomAndPrenom("Jean","Rolling");
-        assertEquals(loginService.loginExists(res),true);
-
-        res = loginGenerator.generateLoginForNomAndPrenom("Paul","Dùrand");
-        assertEquals(loginService.loginExists(res),true);
-
+        assertEquals(res,"PDUR");
 
 
     }
+
+    @Test
+    public void generateLoginForRollingJean() throws Exception {
+        String res;
+        res = loginGenerator.generateLoginForNomAndPrenom("Rolling","Jean");
+        assertEquals(loginService.loginExists(res),true);
+        assertEquals(res,"JROL1");
+    }
+
+    @Test
+    public void generateLoginForDurandPaulAccent() throws Exception {
+        String res;
+        res = loginGenerator.generateLoginForNomAndPrenom("Dùrand","Paul");
+        assertEquals(loginService.loginExists(res),true);
+        assertEquals(res,"PDUR");
+    }
+
+
+
 
 }
