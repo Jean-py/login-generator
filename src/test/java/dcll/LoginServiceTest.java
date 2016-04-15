@@ -26,13 +26,13 @@ public class LoginServiceTest {
     @Test
     public void loginExists() throws Exception {
         Boolean res = loginService.loginExists("JROL");
-        assertEquals(res, true);
+        assertEquals(true,res);
     }
 
     @Test
     public void loginDoesntExists() throws Exception {
         Boolean res = loginService.loginExists("AAAAA");
-        assertEquals(res, false);
+        assertEquals(false,res );
     }
 
     @Test
@@ -41,7 +41,7 @@ public class LoginServiceTest {
         this.loginService.addLogin(test);
         List myListe = new ArrayList<String>();
         myListe = this.loginService.findAllLogins();
-        assertEquals(myListe.contains(test), true);
+        assertEquals(true,myListe.contains(test));
     }
 
     @Test
@@ -49,17 +49,17 @@ public class LoginServiceTest {
         List<String> myListe = new ArrayList<String>();
         myListe = this.loginService.findAllLoginsStartingWith("J");
         assertEquals(myListe.size(), 4);
-        assertEquals(myListe.contains("JROL"),true);
-        assertEquals(myListe.contains("JDUP"),true);
-        assertEquals(myListe.contains("JRAL"),true);
-        assertEquals(myListe.contains("JRAL1"),true);
+        assertEquals(true,myListe.contains("JROL"));
+        assertEquals(true,myListe.contains("JDUP"));
+        assertEquals(true,myListe.contains("JRAL"));
+        assertEquals(true,myListe.contains("JRAL1"));
     }
 
     @Test
     public void findAllLogins() throws Exception {
         List<String> myListe = new ArrayList<String>();
         myListe = this.loginService.findAllLogins();
-        assertEquals(myListe.size(),6);
+        assertEquals(6,myListe.size());
     }
 
 
