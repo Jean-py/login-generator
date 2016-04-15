@@ -31,9 +31,8 @@ public class LoginGeneratorTest {
 
         res = loginGenerator.generateLoginForNomAndPrenom("Paul","Dùrand");
         assertEquals(loginService.loginExists(res),true);
-
-
-
     }
+
+    
 
 }
