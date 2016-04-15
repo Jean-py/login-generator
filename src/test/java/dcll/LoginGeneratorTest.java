@@ -24,44 +24,45 @@ public class LoginGeneratorTest {
     public void generateLoginForDurandPaul() throws Exception {
         String res;
         res = loginGenerator.generateLoginForNomAndPrenom("Durand","Paul");
-        assertEquals(loginService.loginExists(res),true);
-        assertEquals(res,"PDUR");
+        assertEquals(true,loginService.loginExists(res));
+        assertEquals("PDUR",res);
 
 
     }
 
-    @Test
-    public void generateLoginForRollingJean() throws Exception {
-        String res;
-        res = loginGenerator.generateLoginForNomAndPrenom("Rolling","Jean");
-        assertEquals(loginService.loginExists(res),true);
-        assertEquals(res,"JROL1");
-    }
 
     @Test
     public void generateLoginForDurandPaulAccent() throws Exception {
         String res;
         res = loginGenerator.generateLoginForNomAndPrenom("Dùrand","Paul");
-        assertEquals(loginService.loginExists(res),true);
-        assertEquals(res,"PDUR");
+        assertEquals(true,loginService.loginExists(res));
+        assertEquals("PDUR",res);
     }
 
+
     @Test
-    public void generateLoginForPaulDu() throws Exception {
+    public void generateLoginForDuPaul() throws Exception {
         String res;
         res = loginGenerator.generateLoginForNomAndPrenom("Du","Paul");
-        assertEquals(loginService.loginExists(res),true);
-        assertEquals(res,"PDU");
+        //assertEquals(true,loginService.loginExists(res));
+        assertEquals("PDU",res);
     }
 
     @Test
     public void generateLoginForJohnRalling() throws Exception {
         String res;
         res = loginGenerator.generateLoginForNomAndPrenom("Ralling","John");
-        assertEquals(loginService.loginExists(res),true);
-        assertEquals(res,"JRAL2");
+        assertEquals(true,loginService.loginExists(res));
+        assertEquals("JRAL2",res);
     }
 
+    @Test
+    public void generateLoginForRollingJean() throws Exception {
+        String res;
+        res = loginGenerator.generateLoginForNomAndPrenom("Rolling","Jean");
+        assertEquals(true,loginService.loginExists(res));
+        assertEquals("JROL1",res);
+    }
 
 
     
